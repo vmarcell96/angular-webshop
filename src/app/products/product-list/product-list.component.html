@@ -38,7 +38,6 @@
                   [title]="product.productName"
                   [style.width.px]="imageWidth"
                   [style.Margin.px]="imageMargin"
-                  
                 />
             </td>
             <td>
@@ -49,6 +48,7 @@
             <td>{{ product.productCode | lowercase | convertToSpaces:'-' }}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price | currency: 'USD':'symbol':'1.2-2'}}</td>
+            <td><aw-star [rating]="product.starRating"></aw-star></td>
           </tr>
         </tbody>
       </table>
