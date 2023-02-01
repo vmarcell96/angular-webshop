@@ -20,7 +20,6 @@ export class ProductService {
     getProducts(): Observable<Product[]> {
         return this.http.get<Product[]>(this.productUrl).pipe(
             //with tap we can access the emitted item without modifying it
-            tap(data => console.log("sd")),
             catchError(this.handleError)
         );
     }
