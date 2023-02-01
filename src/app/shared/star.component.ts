@@ -23,6 +23,6 @@ export class StarComponent implements OnChanges {
     //Passing event to the container component as output
     onClick(): void {
         //using event emitter to emit a string event
-        this.ratingClicked.emit(`$The rating was clicked: {this.rating}`);
+        this.ratingClicked.emit(`The rating was clicked: ${this.rating}`);
     }
 } 
