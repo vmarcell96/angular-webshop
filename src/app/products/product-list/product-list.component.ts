@@ -24,8 +24,10 @@ export class ProductListComponent implements OnInit {
     }
     set listFilter(value: string) {
         this._listFilter = value;
+        this.filteredProducts = this.performFilter(value);
     }
 
+    filteredProducts: Product[] = [];
     products: Product[] = [
         {
             "productId": 1,
@@ -48,6 +50,13 @@ export class ProductListComponent implements OnInit {
             "imageUrl": "assets/images/garden_cart.png"
           },
     ];
+
+    performFilter(filterBy: string): Product[] {
+        filterBy = filterBy.toLocaleLowerCase();
+        return this.products.filter((product: Product) => 
+            product.productName.toLocaleLowerCase().includes(filterBy)
+        );
+    }
 
     toggleImage(): void {
         this.showImage = !this.showImage;
