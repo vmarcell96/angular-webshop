@@ -70,5 +70,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product List: ' + message;
     }
+
+    onBuyClicked(): void {
+        console.log("Buy button clicked.");
+    }
     
 }

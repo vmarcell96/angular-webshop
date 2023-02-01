@@ -28,6 +28,7 @@
             <th>Available</th>
             <th>Price</th>
             <th>5 Star Rating</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -54,6 +55,14 @@
                 (ratingClicked)="onRatingClicked($event)"
               >
               </aw-star>
+            </td>
+            <td>
+              <button 
+                class="btn btn-warning"
+                (click)="onBuyClicked()"
+              >
+                Buy
+              </button>
             </td>
           </tr>
         </tbody>
