@@ -1,17 +1,32 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Product } from "src/app/types/product";
 
 
 @Component({
     selector: 'pm-products',
     templateUrl: './product-list.component.html',
+    styleUrls: ['./product-list.component.css']
 })
 
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+    ngOnInit(): void {
+        throw new Error("Method not implemented.");
+    }
+
     pageTitle: string = "Product List";
     imageWidth: number = 50;
     imageMargin: number = 2;
+    showImage: boolean = true;
 
-    products: any[] = [
+    private _listFilter: string = '';
+    get listFilter(): string {
+        return this._listFilter;
+    }
+    set listFilter(value: string) {
+        this._listFilter = value;
+    }
+
+    products: Product[] = [
         {
             "productId": 1,
             "productName": "Leaf Rake",
@@ -33,5 +48,9 @@ export class ProductListComponent {
             "imageUrl": "assets/images/garden_cart.png"
           },
     ];
+
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
     
 }
