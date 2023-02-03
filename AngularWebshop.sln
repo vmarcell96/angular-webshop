@@ -4,10 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularWebshop.BusinessLayer", "AngularWebshop.BusinessLayer\AngularWebshop.BusinessLayer.csproj", "{C987C319-EB96-4117-9F6C-DBF160A936E5}"
+<<<<<<< Updated upstream
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F6E71043-C9B9-45A4-83AD-BB05F5389E90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebshop.BusinessLayerTest", "Tests\AngularWebshop.BusinessLayerTest\AngularWebshop.BusinessLayerTest.csproj", "{B8BF60C0-8CC7-48D4-9F5F-EBA2F7B25F6E}"
+=======
+>>>>>>> Stashed changes
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
