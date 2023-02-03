@@ -63,30 +63,6 @@
             return isValid;
         }
 
-        /// <summary>
-        /// Retrieve one customer.
-        /// </summary>
-        public Customer Retrieve(int customerId) 
-        {
-            
-            return new Customer();
-        }
 
-        /// <summary>
-        /// Retrieve all customers.
-        /// </summary>
-        public List<Customer> Retrieve()
-        {
-
-            return new List<Customer>();
-        }
-        /// <summary>
-        /// Saves the current customer.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            return true;
-        }
     }
 }
