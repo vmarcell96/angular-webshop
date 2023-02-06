@@ -1,6 +1,8 @@
-﻿namespace AngularWebshop.BusinessLayer
+﻿using AngularWebshop.Common;
+
+namespace AngularWebshop.BusinessLayer
 {
-    public class Customer : EntityBase
+    public class Customer : EntityBase, ILoggable
     {
         public Customer() : this(0)
         {
@@ -63,6 +65,9 @@
             return isValid;
         }
 
+        public string Log() =>
+      $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.ToString()}";
 
+        public override string ToString() => FullName;
     }
 }

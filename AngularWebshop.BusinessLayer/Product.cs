@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AngularWebshop.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AngularWebshop.BusinessLayer
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
 
         public Product()
@@ -27,7 +28,7 @@ namespace AngularWebshop.BusinessLayer
         {
             get
             {
-                return _productName;
+                return _productName.InsertSpaces();
             }
             set
             {
