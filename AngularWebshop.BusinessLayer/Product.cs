@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AngularWebshop.BusinessLayer
 {
-    public class Product
+    public class Product : EntityBase
     {
+
         public Product()
         {
 
@@ -20,34 +21,30 @@ namespace AngularWebshop.BusinessLayer
         public decimal? CurrentPrice { get; set; }
         public string ProductDescription { get; set; }
         public int ProductId { get; private set; }
-        public string ProductName { get; set; }
 
-        /// <summary>
-        /// Retrieve one product.
-        /// </summary>
-        public Product Retrieve(int productId)
+        private string _productName;
+        public string ProductName
         {
-            // Code that retrieves the defined product
-
-            return new Product();
+            get
+            {
+                return _productName;
+            }
+            set
+            {
+                _productName = value;
+            }
         }
 
-        /// <summary>
-        /// Saves the current product.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            // Code that saves the defined product
+        public string Log() =>
+        $"{ProductId}: {ProductName} Detail: {ProductDescription} Status: {EntityState.ToString()}";
 
-            return true;
-        }
+        public override string ToString() => ProductName;
 
         /// <summary>
         /// Validates the product data.
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 

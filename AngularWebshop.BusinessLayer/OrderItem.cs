@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AngularWebshop.BusinessLayer
 {
+
     public class OrderItem
     {
         public OrderItem()

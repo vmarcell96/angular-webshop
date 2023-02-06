@@ -6,46 +6,35 @@ using System.Threading.Tasks;
 
 namespace AngularWebshop.BusinessLayer
 {
-    public class Order
+    public class Order : EntityBase
     {
-        public Order()
+        public Order() : this(0)
         {
 
         }
         public Order(int orderId)
         {
             OrderId = orderId;
+            OrderItems = new List<OrderItem>();
         }
 
+        public int CustomerId { get; set; }
         public DateTimeOffset? OrderDate { get; set; }
         public int OrderId { get; private set; }
+        public List<OrderItem> OrderItems { get; set; }
+        public int ShippingAddressId { get; set; }
 
-        /// <summary>
-        /// Retrieve one order.
-        /// </summary>
-        public Order Retrieve(int orderId)
-        {
-            // Code that retrieves the defined order
+        public string Log() =>
+            $"{OrderId}: Date: {this.OrderDate.Value.Date} Status: {this.EntityState.ToString()}";
 
-            return new Order();
-        }
-
-        /// <summary>
-        /// Saves the current order.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            // Code that saves the defined order
-
-            return true;
-        }
+        public override string ToString() =>
+              $"{OrderDate.Value.Date} ({OrderId})";
 
         /// <summary>
         /// Validates the order data.
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
