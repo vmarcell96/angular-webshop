@@ -4,13 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularWebshop.BusinessLayer", "AngularWebshop.BusinessLayer\AngularWebshop.BusinessLayer.csproj", "{C987C319-EB96-4117-9F6C-DBF160A936E5}"
-<<<<<<< Updated upstream
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F6E71043-C9B9-45A4-83AD-BB05F5389E90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebshop.BusinessLayerTest", "Tests\AngularWebshop.BusinessLayerTest\AngularWebshop.BusinessLayerTest.csproj", "{B8BF60C0-8CC7-48D4-9F5F-EBA2F7B25F6E}"
-=======
->>>>>>> Stashed changes
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularWebshop.BusinessLayerTest", "Tests\AngularWebshop.BusinessLayerTest\AngularWebshop.BusinessLayerTest.csproj", "{B8BF60C0-8CC7-48D4-9F5F-EBA2F7B25F6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebshop.Common", "AngularWebshop.Common\AngularWebshop.Common.csproj", "{4635CE51-5BBC-4674-B5AF-121621EFE95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebshop.CommonTest", "Tests\AngularWebshop.CommonTest\AngularWebshop.CommonTest.csproj", "{41D21273-5B0B-43E4-9653-618307B3C808}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,12 +27,21 @@ Global
 		{B8BF60C0-8CC7-48D4-9F5F-EBA2F7B25F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8BF60C0-8CC7-48D4-9F5F-EBA2F7B25F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8BF60C0-8CC7-48D4-9F5F-EBA2F7B25F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4635CE51-5BBC-4674-B5AF-121621EFE95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4635CE51-5BBC-4674-B5AF-121621EFE95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4635CE51-5BBC-4674-B5AF-121621EFE95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4635CE51-5BBC-4674-B5AF-121621EFE95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D21273-5B0B-43E4-9653-618307B3C808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D21273-5B0B-43E4-9653-618307B3C808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D21273-5B0B-43E4-9653-618307B3C808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D21273-5B0B-43E4-9653-618307B3C808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B8BF60C0-8CC7-48D4-9F5F-EBA2F7B25F6E} = {F6E71043-C9B9-45A4-83AD-BB05F5389E90}
+		{41D21273-5B0B-43E4-9653-618307B3C808} = {F6E71043-C9B9-45A4-83AD-BB05F5389E90}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74B94C9D-E034-4868-BBD1-087CBFBEE0D3}

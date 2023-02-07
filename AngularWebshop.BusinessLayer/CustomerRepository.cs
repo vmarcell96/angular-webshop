@@ -8,6 +8,13 @@ namespace AngularWebshop.BusinessLayer
 {
     public class CustomerRepository
     {
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+
+        private AddressRepository addressRepository { get; set; }
+
         /// <summary>
         /// Retrieve one customer.
         /// </summary>
@@ -26,6 +33,8 @@ namespace AngularWebshop.BusinessLayer
                 customer.EmailAddress = "fbaggins@hobbiton.me";
                 customer.FirstName = "Frodo";
                 customer.LastName = "Baggins";
+                customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).
+                                            ToList();
             }
             return customer;
         }
@@ -36,9 +45,28 @@ namespace AngularWebshop.BusinessLayer
         /// <returns></returns>
         public bool Save(Customer customer)
         {
-            // Code that saves the passed in customer
+            var success = true;
 
-            return true;
+            if (customer.HasChanges)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
     }
 }

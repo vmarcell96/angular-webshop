@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AngularWebshop.BusinessLayer
 {
-    public class Address
+    public class Address : EntityBase
     {
         public Address()
         {
@@ -30,7 +30,7 @@ namespace AngularWebshop.BusinessLayer
         /// Validates the address data.
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 

@@ -1,45 +1,32 @@
-﻿namespace AngularWebshop.BusinessLayer
+﻿using AngularWebshop.Common;
+
+namespace AngularWebshop.BusinessLayer
 {
-    public class Customer
+    public class Customer : EntityBase, ILoggable
     {
-        public Customer()
+        public Customer() : this(0)
         {
 
         }
-
         public Customer(int customerId)
         {
-            CustomerId= customerId;
+            CustomerId = customerId;
+            AddressList = new List<Address>();
         }
 
+        public List<Address> AddressList { get; set; }
         public int CustomerId { get; private set; }
+        public int CustomerType { get; set; }
         public string EmailAddress { get; set; }
+
         public string FirstName { get; set; }
-
-        private string _lastName;
-        public string LastName
-        { 
-            get
-            {
-                return _lastName;
-            }
-            set
-            {
-                _lastName = value;
-            }
-        }
-
-        
-
         public string FullName
         {
             get
             {
                 string fullName = LastName;
-                //There is a firstname
                 if (!string.IsNullOrWhiteSpace(FirstName))
                 {
-                    //there is a lastname
                     if (!string.IsNullOrWhiteSpace(fullName))
                     {
                         fullName += ", ";
@@ -49,11 +36,26 @@
                 return fullName;
             }
         }
+
+        public static int InstanceCount { get; set; }
+
+        private string _lastName;
+        public string LastName
+        {
+            get
+            {
+                return _lastName;
+            }
+            set
+            {
+                _lastName = value;
+            }
+        }
         /// <summary>
         /// Validates the customer data.
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -63,6 +65,9 @@
             return isValid;
         }
 
+        public string Log() =>
+      $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.ToString()}";
 
+        public override string ToString() => FullName;
     }
 }
