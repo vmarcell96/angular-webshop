@@ -1,4 +1,4 @@
-﻿using AngularWebshop.BusinessLayer;
+using AngularWebshop.BusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +30,7 @@ namespace AngularWebshop.BusinessLayerTest
             Assert.Equal(expected.FirstName, actual.FirstName);
             Assert.Equal(expected.LastName, actual.LastName);
         }
+
 
         [Fact]
         public void RetrieveExistingWithAddress()
@@ -84,5 +85,6 @@ namespace AngularWebshop.BusinessLayerTest
                 Assert.Equal(expected.AddressList[i].PostalCode, actual.AddressList[i].PostalCode);
             }
         }
+
     }
 }
