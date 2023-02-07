@@ -4,16 +4,10 @@ namespace AngularWebshop.BusinessLayerTest
 {
     public class CustomerTest
     {
-        //-- Arrange
-
-        //-- Act
-
-        //-- Assert
         [Fact]
-        public void FullName_Valid()
+        public void FullNameTestValid()
         {
             //-- Arrange
-
             Customer customer = new Customer
             {
                 FirstName = "Bilbo",
@@ -22,19 +16,16 @@ namespace AngularWebshop.BusinessLayerTest
             string expected = "Baggins, Bilbo";
 
             //-- Act
-
             string actual = customer.FullName;
 
             //-- Assert
-
             Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void FullName_FirstNameEmpty()
+        public void FullNameFirstNameEmpty()
         {
             //-- Arrange
-
             Customer customer = new Customer
             {
                 LastName = "Baggins"
@@ -42,32 +33,49 @@ namespace AngularWebshop.BusinessLayerTest
             string expected = "Baggins";
 
             //-- Act
-
             string actual = customer.FullName;
 
             //-- Assert
-
             Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void FullName_LastNameEmpty()
+        public void FullNameLastNameEmpty()
         {
             //-- Arrange
-
             Customer customer = new Customer
             {
-                FirstName = "Bilbo",
+                FirstName = "Bilbo"
             };
             string expected = "Bilbo";
 
             //-- Act
-
             string actual = customer.FullName;
 
             //-- Assert
-
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void StaticTest()
+        {
+            //-- Arrange
+            var c1 = new Customer();
+            c1.FirstName = "Bilbo";
+            Customer.InstanceCount += 1;
+
+            var c2 = new Customer();
+            c2.FirstName = "Frodo";
+            Customer.InstanceCount += 1;
+
+            var c3 = new Customer();
+            c3.FirstName = "Rosie";
+            Customer.InstanceCount += 1;
+
+            //-- Act
+
+            //-- Assert
+            Assert.Equal(3, Customer.InstanceCount);
         }
 
         [Fact]

@@ -1,7 +1,7 @@
 ﻿namespace AngularWebshop.Common
 {
-    public class Class1
+    public interface ILoggable
     {
-
+        string Log();
     }
 }
