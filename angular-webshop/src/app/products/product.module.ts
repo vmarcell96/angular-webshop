@@ -4,11 +4,14 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './product-detail/product-detail.guard';
 import { SharedModule } from '../shared/shared.module';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductEditGuard } from './product-edit/product-edit.guard';
 
 @NgModule({
   declarations: [
     ProductDetailComponent,
     ProductListComponent,
+    ProductEditComponent,
   ],
   imports: [
     RouterModule.forChild([
@@ -18,9 +21,14 @@ import { SharedModule } from '../shared/shared.module';
         //if id is NaN access is denied
         canActivate: [ProductDetailGuard],
         component: ProductDetailComponent
+      },
+      {
+        path: 'products/:id/edit',
+        canDeactivate: [ProductEditGuard],
+        component: ProductEditComponent
       }
     ]),
-    SharedModule
+    SharedModule,
   ]
 })
 export class ProductModule { }

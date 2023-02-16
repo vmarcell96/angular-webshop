@@ -7,6 +7,8 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
 import { ProductModule } from './products/product.module';
 import { RouterModule } from '@angular/router';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { ProductData } from './products/product-data';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { AuthenticationModule } from './authentication/authentication.module';
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
     ]),
     ProductModule,
-    AuthenticationModule
+    AuthenticationModule,
+    HttpClientInMemoryWebApiModule.forRoot(ProductData),
   ],
   //Defines the component which the index.html file needs to start the app
   bootstrap: [AppComponent]

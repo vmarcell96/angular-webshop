@@ -1,5 +1,5 @@
 export type Product = {
-    "productId": number;
+    "id": number | null;
     "productName": string;
     "productCode": string;
     "releaseDate": string;
@@ -7,4 +7,5 @@ export type Product = {
     "description": string;
     "starRating": number;
     "imageUrl": string;
+    "tags"?: string[];
 };

@@ -3,7 +3,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent }
     ]),
-    ReactiveFormsModule
   ]
 })
 export class AuthenticationModule { }
