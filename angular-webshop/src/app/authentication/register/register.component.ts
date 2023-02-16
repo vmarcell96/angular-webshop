@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { Customer } from 'src/app/types/customer';
+import { NumberValidators } from 'src/app/shared/number.validator'
 
 //function for validating email matching
 function emailMatcher(c: AbstractControl): { [key: string]: boolean } | null {
@@ -17,19 +18,6 @@ function emailMatcher(c: AbstractControl): { [key: string]: boolean } | null {
   }
   // returns a validation error object
   return { 'match': true };
-}
-
-// use factory pattern if want to pass parameters
-// the validator func is wrapped inside a factory function which returns a validator function
-// if only this component uses this validator its okay to define it here
-function ratingRange(min: number, max: number): ValidatorFn {
-  return (c: AbstractControl): { [key: string]: boolean } | null => {
-    if (c.value !== null && (isNaN(c.value) || c.value < min || c.value > max)) {
-      // returns a validation error object
-      return { range: true };
-    }
-    return null;
-  };
 }
 
 @Component({
@@ -69,7 +57,7 @@ export class RegisterComponent implements OnInit {
       phone: [''],
       notification: ['email'],
       //
-      rating: [null, [ratingRange(1, 5)]],
+      rating: [null, [NumberValidators.range(1, 5)]],
       getNewsLetter: true,
       addresses: this.fb.array([ this.buildAddress() ])
 
