@@ -42,7 +42,7 @@
                 />
             </td>
             <td>
-              <a [routerLink]="['/products', product.productId]">
+              <a [routerLink]="['/products', product.id]">
                 {{ product.productName }}
               </a>
             </td>
@@ -57,11 +57,9 @@
               </aw-star>
             </td>
             <td>
-              <button 
-                class="btn btn-warning"
-                (click)="onBuyClicked()"
-              >
-                Buy
+              <button class="btn btn-outline-primary btn-sm"
+                      [routerLink]="['/products', product.id, 'edit']">
+                Edit
               </button>
             </td>
           </tr>
